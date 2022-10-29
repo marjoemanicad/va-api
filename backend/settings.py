@@ -162,6 +162,6 @@ ACCOUNT_EMAIL_REQUIRED = 'false'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    'https://va-restapi.herokuapp.com',
+    'https://va-ftont.herokuapp.com/login',
     'https://127.0.0.1',
 ]
