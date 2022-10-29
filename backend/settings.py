@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(dm!(!vhc5=^pdkm*knyy+&g6xqf)jc13276b%ydf!66@(8kh&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['va-restapi.herokuapp.com',
     '127.0.0.1',]
@@ -163,5 +164,10 @@ ACCOUNT_EMAIL_REQUIRED = 'false'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     'https://va-ftont.herokuapp.com',
-    'https://127.0.0.1',
+    'https://127.0.0.1:8000',
 ]
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=10),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
